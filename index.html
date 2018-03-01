@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>利用jquery的$.deferred完成图片异步加载失败替换</title>
+  <script src="jquery.min.js" charset="utf-8"></script>
+  <script src="index.js" charset="utf-8"></script>
+<style media="screen">
+.img-center {
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-center img {
+    display: block;
+    position: absolute;
+}
+
+.img-center img.aspectFill-x {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%) ;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.img-center img.aspectFill-y {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+</style>
+<script type="text/javascript">
+$(function(){
+var domListy = document.querySelectorAll('.img-center')
+imageCenter(domListy,'wspectFill')
+})
+
+
+</script>
+  </head>
+  <body>
+    <div class="img-center">
+<img src="http://h.hiphotos.baidu.com/zhidao/pic/item/0b7b02087bf40ad19d4ded47512c11dfa8ecceed.jpg" alt="">
+
+    </div>
+<div class="img-center">
+  <img src="http://g.hiphotos.baidu.com/zhidao/pic/item/a1ec08fa513d2697479b2ffa57fbb2fb4216d8c8.jpg" alt="">
+
+
+</div>
+<div class="img-center">
+<img src="http://img1.3lian.com/2015/a1/87/d/208.jpg" alt="">
+
+</div>
+  </body>
+</html>
